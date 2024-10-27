@@ -16,11 +16,11 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() < 2 {
-        println!("Veuillez fournir un mot en argument.");
+        println!("Usage: ./palindrome <word>");
         return;
     }
 
     let word = &args[1];
     let result = palindrome(word);
-    println!("Est-ce un palindrome ? {}", result);
+    println!("palindrome ? {}", result);
 }
