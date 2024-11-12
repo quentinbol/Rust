@@ -1,0 +1,29 @@
+[package]
+name = "exercises"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "cast"
+path = "cast.rs"
+
+[profile.release]
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
+
+[lints.rust]
+unsafe_code = "forbid"
+unstable_features = "forbid"
+
+[lints.clippy]
+todo = "forbid"
+empty_loop = "forbid"
+infinite_loop = "deny"
+mem_forget = "deny"
+
+[dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
